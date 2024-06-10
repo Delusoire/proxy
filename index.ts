@@ -26,6 +26,9 @@ function processReqHeaders(req: Request) {
 }
 
 function fixUrl(url: string, reqUrl: string) {
+	if (url.startsWith("/")) {
+		return url;
+	}
 	let urlObj: URL;
 	try {
 		urlObj = new URL(url);
